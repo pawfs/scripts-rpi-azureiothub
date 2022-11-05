@@ -1,0 +1,26 @@
+import os
+import asyncio
+from azure.iot.device.aio import IoTHubDeviceClient
+
+
+async def main():
+    # Fetch the connection string from an enviornment variable
+    #conn_str = os.getenv("IOTHUB_DEVICE_CONNECTION_STRING")
+    conn_str = "HostName=iot-aztest726-ay220726.azure-devices.net;DeviceId=pi-requiem;SharedAccessKey=PKQ+YFcoZCykKaU/1/XtsflK/Vu2xDbtl8fsF+2Q9Tc="
+    # Create instance of the device client using the authentication provider
+    device_client = IoTHubDeviceClient.create_from_connection_string(conn_str)
+
+    # Connect the device client.
+    await device_client.connect()
+
+    # Send a single message
+    print("Sending message...")
+    await device_client.send_message("This is a message that is being sent")
+    print("Message successfully sent!")
+
+    # finally, shut down the client
+    await device_client.shutdown()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
