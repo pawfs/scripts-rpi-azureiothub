@@ -41,7 +41,7 @@ When called, the functions led_on and led_off can turn on and off the LEDs conne
 This program reads the temperature from the temperature sensor.
 It gets the raw temperature from the sensor then the temperature is converted to degrees Celsius.
 
-The scripts are separate programs each testing a certain functionality related to the temperature sensor or Azure IoT Hub from the client side (the Raspberry Pi)
+The other scripts are separate programs each testing a certain functionality related to the temperature sensor or Azure IoT Hub from the client side (the Raspberry Pi).
 
 The keys used in the project are no longer functional make sure you change them if you want to test.
 
