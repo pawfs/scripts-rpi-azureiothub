@@ -4,8 +4,8 @@ sample python scripts for using raspberry pi with a temperature sensor and Azure
 Inside the TemperatureSensor folder is a python project that can send telemetry to Azure IoT Hub about the temperature sensed by the Raspberry Pi and send commands to HVAC thanks to the IR sensor.
 
 Before running the program, run this command from the command prompt :
-
-cmd/sh pip3 install azure-iot-device
+cmd/sh
+pip3 install azure-iot-device
 
 Scripts Explained:
 1. Configuration (ConfigFile.py)
