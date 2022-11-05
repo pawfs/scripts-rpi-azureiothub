@@ -24,14 +24,9 @@ In each iteration:
  It checks if there are any triggered alerts by the current temperature.
  It sends the message containing the temperature and custom properties (alerts) to the IoT hub.
  Finally it waits for a certain set INTERVAL to start over these last steps again.
+ 
 3. HVAC unit control (ControlAirCon.py)
 This program automatically chooses the logical action to send signals from the IR transmitter to the HVAC unit depending on the given minimum and maximum temperature (depending from the current season) and the time.
-The used functions in this program file :
- find_current_season: Determines the current season from the date.
- working_time: Returns true if the current time is in working hours.
- turn_on_heat, turn_off_heat, turn_on_cool, turn_off_cool: Sends the required signal from the IR transmitter.
- Choose action: Checks all the conditions to determine what action to send according to this scenario:
-The HVAC can be turned on only on working hours, otherwise it will be turned off. In summer the HVAC has to lower the room temperature that is why it gets turned on “cool mode” if the received temperature exceeds the summer maximum value. And it gets turned off if the temperature is below the summer minimum value. In winter the HVAC has to raise the room temperature that is why it gets turned on “heat mode” if the received temperature is below the winter minimum value. And it gets turned off if the temperature exceeds the winter maximum value.
 
 4. LED lights control (LedLight.py)
 This program controls the state of the LEDs.
